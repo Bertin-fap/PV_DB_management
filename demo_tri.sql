@@ -1,0 +1,19 @@
+SELECT 
+  Sinton.P1 AS SINTON_P1,
+  MEP.P1 AS MEP_P1,
+  PECVD.P1 AS PECVD_P1,
+  Wet.P2 AS Wet_P2,
+  MEP.PK AS MEP_PEK,
+  Sinton.PK AS Sinton_PK,
+  PECVD.PK AS PECVD_PK,
+  Wet.PK AS Wet_PK
+FROM 
+  Sinton 
+JOIN MEP 
+  ON Sinton.PK=MEP.PK 
+JOIN PECVD 
+  ON Sinton.PK=PECVD.PK 
+JOIN Wet 
+  ON Sinton.PK=Wet.PK
+WHERE
+  Sinton.P1>0.5 AND Wet.P2>0.5
