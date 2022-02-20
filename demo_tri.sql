@@ -3,17 +3,17 @@ SELECT
   MEP.P1 AS MEP_P1,
   PECVD.P1 AS PECVD_P1,
   Wet.P2 AS Wet_P2,
-  MEP.PK AS MEP_PEK,
+  MEP.PK AS MEP_PK,
   Sinton.PK AS Sinton_PK,
   PECVD.PK AS PECVD_PK,
   Wet.PK AS Wet_PK
 FROM 
   Sinton 
 JOIN MEP 
-  ON Sinton.PK=MEP.PK 
+  ON Sinton_PK=MEP_PK 
 JOIN PECVD 
-  ON Sinton.PK=PECVD.PK 
+  ON Sinton_PK=PECVD_PK 
 JOIN Wet 
-  ON Sinton.PK=Wet.PK
+  ON Sinton_PK=Wet_PK
 WHERE
-  Sinton.P1>0.5 AND Wet.P2>0.5
+  Sinton_P1>0.1 AND Wet_P2>0;
